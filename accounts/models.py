@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import AbstractUser, UserManager, models
 
 from django.utils import timezone
 
@@ -26,3 +26,7 @@ class User(AbstractUser):
     #In later units we'll be adding things like payment details.
 
     objects = AccountUserManager()
+
+
+    #stripe_id field is added as a CharField, so when the registration form is saved, we'll also retain our new token/id.
+    stripe_id = models.CharField(max_length=40, default=' ')

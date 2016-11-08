@@ -10,6 +10,7 @@
 {%  block content  %}
     <h2> Success! </h2>
     <p> You are logged in as {{ user.email }}</p>
+    <li><a href="{%  url 'logout' %}">LogOut</a></li>
 {% endblock %}
 
 </body>
