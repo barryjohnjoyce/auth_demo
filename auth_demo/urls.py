@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from hello import views
 from accounts import views as accounts_views
+from hello import views
 from hello import views as hello_views
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^profile/$', accounts_views.profile, name='profile'),
     url(r'^login/$', accounts_views.login, name='login'),
     url(r'^logout/$', accounts_views.logout, name='logout'),
+    url(r'^cancel_subscription/$', accounts_views.cancel_subscription, name='cancel_subscription'),
 
 
 ]

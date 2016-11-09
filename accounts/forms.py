@@ -26,7 +26,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2', 'stripe_id' ]
+        fields = ['email', 'password1', 'password2' ]
         exclude =['username']
 
 
@@ -42,7 +42,7 @@ class UserRegistrationForm(UserCreationForm):
 
     def save(self, commit=True):
         instance = super(UserRegistrationForm, self).save(commit=False)
-        #automatically set to email address to create a unique identifier
+        # automatically set to email address to create a unique identifier
         instance.username = instance.email
 
         if commit:
