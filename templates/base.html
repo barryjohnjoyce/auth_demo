@@ -23,12 +23,16 @@
             <li><a href="/">Home</a></li>
             <li><a href="/pages/about">About</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href = "/products">Products</a></li>
+            <li><a href = "/magazines">Magazines</a></li>
+
             {%  if user.is_authenticated %}
                 <li><a href ="{%  url 'profile'  %}">Profile</a></li>
                 <li><a href ="{%  url 'logout' %}">Log Out</a></li>
             {%  else %}
                 <li><a href="{%  url 'register'  %}">Register</a></li>
                 <li><a href="{%  url 'login' %}">LogIn</a></li>
+
             {% endif %}
         </ul>
         <h1><span class="fui­settings­16muted">OurSimpleSite</span></h1>
