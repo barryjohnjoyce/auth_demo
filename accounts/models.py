@@ -9,7 +9,6 @@ from django.db import models
 
 class AccountUserManager (UserManager):
     def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
-        """creates and saves a user with the given username, email and password"""
 
         now = timezone.now()
         if not email:
